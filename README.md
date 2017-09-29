@@ -1,18 +1,18 @@
-# ReorderableGridView
+# Reorder a View
 
+Reorderable grid view solution implemented with Swift 4. <br>
 
-Reorderable grid view solution implemented with swift. <br>
+It's UIScrollView subclass, not a collection view layout.<br>
 
-Its UIScrollView subclass, its not a collection view layout.<br>
-automatically sets horizontal item spacing by item widths. so items must be fixed-width.<br>
-also sets automatically its content size. <br>
+It automatically sets horizontal item spacing by item widths. so items must be fixed-width.<br>
+It also sets automatically its scroll view content size. <br>
 
-if you call `gridView?.invalidateLayout()` after orientation changed, it will lays out the grid by new orientation.
+If you call `gridView?.invalidateLayout()` after orientation changed, it will lays out the grid by new orientation.
 
 ```swift
 override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-gridView?.setW(w: size.width, h: size.height)
-gridView?.invalidateLayout()
+  gridView?.setW(w: size.width, h: size.height)
+  gridView?.invalidateLayout()
 }
 ```
 
